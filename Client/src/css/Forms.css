@@ -1,0 +1,35 @@
+.FormsTable{
+    margin-top:60px;
+    margin-left:200px;
+}
+.print{
+    color:grey;
+    text-decoration: solid;
+    font-size: 100%;
+}
+.td{
+   color:grey;
+   text-decoration: solid;
+   text-align: right;
+}
+.normal{
+    color:black;
+    text-decoration-line:none;
+}
+.formStyle{
+    font-size:13px;
+    color:grey;
+    font-weight:600;
+}
+.formStyle:hover{
+    color:orange;
+}
+#ChosenL{
+    color:#e85806;
+}
+#ChosenC{
+    color:#e85806;
+}
+#ChosenCat{
+    color:#e85806;
+}

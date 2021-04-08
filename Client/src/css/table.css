@@ -1,0 +1,54 @@
+.position{
+    font-size:15px;
+}
+.title{
+    width:100px;
+    color:blue;
+    font-size:15px;
+}
+.up{
+    width:15px;
+    height:15px;
+    margin-left: 30px;
+}
+.down{
+    width:15px;
+    height:15px;
+    margin-left: 30px;
+}
+.upNumb{
+    color:green;
+    font-size: 12px;
+}
+.even{
+    width:15px;
+    height:15px;
+    margin-left: 30px;
+}
+.evenNumb{
+    color:blue;
+    font-size: 12px;
+}
+.downNumb{
+    color:red;
+    font-size: 12px;
+}
+.rank{
+    width:10px;
+    text-align: center;
+}
+.logo{
+    width:10px;
+}
+.download{
+    width:30px;
+}
+.reviews{
+    width:30px;
+}
+.rating{
+    width:30px;
+}
+.apps:hover{
+    color:'red'
+}

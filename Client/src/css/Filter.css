@@ -1,0 +1,45 @@
+
+.CategoryBox{
+    font-size: 10px;
+    color:grey;
+}
+.filters{
+    font-size:14px !important; 
+    color:#4a4a4a !important;
+}
+
+.plusMinus{
+    color:#ff5500;
+}
+
+.plusMinus:hover{
+    text-decoration: none;
+    color:red;
+}
+.noUi-horizontal .noUi-handle, .noUi-vertical .noUi-handle {
+    background: orange;
+}
+
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    border-color: orange;
+    background-color: orange;
+  }
+  .custom-checkbox .custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow: 0 0 0 1px #fcc767, 0 0 0 0.2rem #fcc767
+  }
+  
+  .custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+    border-color: orange;
+    background-color: orange;
+  }
+  .custom-radio .custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow: 0 0 0 1px #fcc767, 0 0 0 0.2rem #fcc767
+  }
+  .form-control:focus {
+
+    border-color: #fcc767;
+
+    box-shadow: 0px 1px 1px #fcc767 inset, 0px 0px 8px #fcc767;
+
+}

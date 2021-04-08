@@ -1,0 +1,26 @@
+.table{
+    text-align: center;
+}
+.devName{
+    color:grey;
+}
+.titleTable{
+    margin-top:-10px;
+    margin-left:20px;
+    text-Align:center;
+    border-spacing:0 0px;
+    border-collapse: separate;
+}
+.tableTitle{
+    width:1000px;
+    margin-left:-0.2px;
+    text-align:center;
+    border-spacing:0 0px;
+    border-collapse:separate;
+}
+.showHide{
+    color:#e85106;
+}
+.showHide:hover{
+    text-decoration:underline;
+}

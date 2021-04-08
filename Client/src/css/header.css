@@ -1,0 +1,32 @@
+.active{
+    color:#5a5857 !important;
+    text-decoration: none !important;
+}
+.active:hover{
+    text-decoration: none;
+    color:#5a5857;
+}
+.normal{
+    color:grey ;
+    text-decoration: none;
+}
+.normal:hover{
+    text-decoration: none;
+    color:#5a5857;
+}
+.headerButton{
+    color:black ;
+    text-decoration: none;
+}
+.headerButton:hover{
+    color:black ;
+    text-decoration: none;
+}
+.UserDropDown{
+    color:white;
+    background-color: orange;
+    
+}
+.UserDropDown:hover{
+    color:red;
+}
