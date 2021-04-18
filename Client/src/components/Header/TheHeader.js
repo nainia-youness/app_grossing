@@ -85,42 +85,36 @@ class TheHeader extends Component {
         const {isLogin}=this.state
         return (
             <Navbar bg="light" expand="md" fixed="top" animation="false">
-<Navbar.Brand href="#home" style={{color:"orange"}}>AppGrossing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Navbar.Brand>
-  <Navbar.Toggle aria-controls="basic-navbar-nav" animation="false"/>
-  <Navbar.Collapse id="basic-navbar-nav" >
-    <Nav className="mr-auto">
-        <Container >
-            <Row>
-                <Col>
-                    {isLogin && <NavLink to="/filter" className='normal'>Filter</NavLink>}
-                </Col>
-                <Col>
-                    {isLogin && <NavLink exact to="/statistics" className='normal'>Statistics</NavLink>/*<a className='apps' onClick={titleHandler}></a>*/}
-                </Col>
-                <Col>
-                    {isLogin && <NavLink exact to={'/documentation'} className='normal'>Documentation</NavLink>}
-                </Col>
-            </Row>
-        </Container>
-    </Nav>
-   <Form inline >
-   {!isLogin && <Button  onClick={this.registerHandler} variant="warning" style={{position:'absolute',right:'100px'}}>Sign up</Button>}
-             {!isLogin && <Button onClick={this.loginHandler} variant="warning" >Login</Button>}
-             {isLogin && <Dropdown  style={{textAlign:'center'}}>
-                 <Dropdown.Toggle variant="warning" id="dropdown-basic" >
-                     {this.state.username}
-                 </Dropdown.Toggle>
+                <Navbar.Brand href="#home" style={{color:"orange"}}>AppGrossing</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" animation="false"/>
+                <Navbar.Collapse id="basic-navbar-nav">
+                <Container  fluid>
+                    <Col md={2}></Col>
+                    <Col  md={4}>
+                        {isLogin && <NavLink to="/filter" className='normal'>Filter</NavLink>}
+                        {isLogin && <NavLink exact to="/statistics" className='normal' style={{marginLeft: 20}}>Statistics</NavLink>}
+                        {isLogin && <NavLink exact to={'/documentation'} className='normal' style={{marginLeft: 20}}>Documentation</NavLink>}
+                    </Col>
 
-                 <Dropdown.Menu> 
-                     <Dropdown.Item onClick={this.disconnectHandler} href="#Disconnection">Disconnect</Dropdown.Item>
-                 </Dropdown.Menu>
-             </Dropdown>
-             }
-    </Form>
- 
-  </Navbar.Collapse>
-</Navbar>
-
+                    <Col md={3} style={{textAlign:"right"}}>
+                        {!isLogin && <Button onClick={this.registerHandler} variant="warning">Sign up</Button>}
+                        {!isLogin && <Button onClick={this.loginHandler} variant="warning" style={{marginLeft: 20}} >Login</Button>}
+                    </Col>
+                    <Col md="auto"> 
+                        {isLogin && 
+                                <Dropdown>
+                                    <Dropdown.Toggle variant="warning" id="dropdown-basic" >
+                                        {this.state.username}
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu> 
+                                        <Dropdown.Item onClick={this.disconnectHandler} href="#Disconnection">Disconnect</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                        }
+                    </Col>   
+                </Container>
+                </Navbar.Collapse>
+            </Navbar>
         )
     }
     
@@ -129,3 +123,36 @@ class TheHeader extends Component {
 
 
 export default withRouter(TheHeader)
+
+/*
+
+                <Nav className="mr-auto">
+                    <Container style={{border:"dotted"}}>
+                        <Row>
+                            <Col>
+                                {isLogin && <NavLink to="/filter" className='normal'>Filter</NavLink>}
+                            </Col>
+                            <Col>
+                                {isLogin && <NavLink exact to="/statistics" className='normal'>Statistics</NavLink>}
+                                </Col>
+                                <Col>
+                                    {isLogin && <NavLink exact to={'/documentation'} className='normal'>Documentation</NavLink>}
+                                </Col>
+                            </Row>
+                        </Container>
+                    </Nav>
+                                    <Form inline >
+                            {!isLogin && <Button onClick={this.registerHandler} variant="warning" style={{position:'absolute',right:'100px'}}>Sign up</Button>}
+                            {!isLogin && <Button onClick={this.loginHandler} variant="warning" >Login</Button>}
+                            {isLogin && 
+                                <Dropdown  style={{textAlign:'center'}}>
+                                    <Dropdown.Toggle variant="warning" id="dropdown-basic" >
+                                        {this.state.username}
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu> 
+                                        <Dropdown.Item onClick={this.disconnectHandler} href="#Disconnection">Disconnect</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                            }
+                    </Form>
+*/
