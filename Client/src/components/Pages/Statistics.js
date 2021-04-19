@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import TheHeader from '../Header/TheHeader'
 import Text from '../Other/Text'
 import '../../css/SuperResponsiveTableStyle.css'
-import Rows from '../Other/Rows'
+import Rows from '../Other/Table/Rows'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "../../css/table.css"
 import Forms from '../Other/Forms'
@@ -177,7 +177,7 @@ class Statistics extends Component {
                             </Row>
                             <Row>
                                 <Col  md={{ span: 12}}>
-                                    <Rows  page={this.state.page} rows={this.state.rows}/>
+                                    <Rows  page={this.state.page} rows={this.state.rows} theHeaders={["Ranking","Logo","Title","Dowloads","Review","Rating"]}/>
                                 </Col>
                                 <Col  md={{offset: 5 }}>
                                     <ClipLoader textAlign='center'

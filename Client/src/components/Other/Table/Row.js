@@ -1,6 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import "../../css/table.css"
+import "../../../css/table.css"
 import   {Link} from 'react-router-dom'
 import StarRatings from 'react-star-ratings';
 import { useHistory } from "react-router";
