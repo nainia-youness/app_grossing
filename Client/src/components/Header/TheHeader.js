@@ -1,14 +1,10 @@
 import React,{Component} from 'react'
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
-import Dropdown from 'react-bootstrap/Dropdown'
+import {Navbar,Button,Dropdown} from 'react-bootstrap'
 import {NavLink} from 'react-router-dom'
 import '../../css/header.css'
-import {reactLocalStorage} from 'reactjs-localstorage';
+import {reactLocalStorage} from 'reactjs-localstorage'
 import   {withRouter} from 'react-router-dom'
-import {Container,Row,Col} from 'react-bootstrap'
+import {Container,Col} from 'react-bootstrap'
 
 class TheHeader extends Component {
 
@@ -28,7 +24,6 @@ class TheHeader extends Component {
     }
 
     componentDidMount(){
-        //reactLocalStorage.setObject('var', {'email':'',isLogin:false})
         if(reactLocalStorage.getObject('user').isLogin===true)
             this.setState({
                 isLogin:true
@@ -123,36 +118,3 @@ class TheHeader extends Component {
 
 
 export default withRouter(TheHeader)
-
-/*
-
-                <Nav className="mr-auto">
-                    <Container style={{border:"dotted"}}>
-                        <Row>
-                            <Col>
-                                {isLogin && <NavLink to="/filter" className='normal'>Filter</NavLink>}
-                            </Col>
-                            <Col>
-                                {isLogin && <NavLink exact to="/statistics" className='normal'>Statistics</NavLink>}
-                                </Col>
-                                <Col>
-                                    {isLogin && <NavLink exact to={'/documentation'} className='normal'>Documentation</NavLink>}
-                                </Col>
-                            </Row>
-                        </Container>
-                    </Nav>
-                                    <Form inline >
-                            {!isLogin && <Button onClick={this.registerHandler} variant="warning" style={{position:'absolute',right:'100px'}}>Sign up</Button>}
-                            {!isLogin && <Button onClick={this.loginHandler} variant="warning" >Login</Button>}
-                            {isLogin && 
-                                <Dropdown  style={{textAlign:'center'}}>
-                                    <Dropdown.Toggle variant="warning" id="dropdown-basic" >
-                                        {this.state.username}
-                                    </Dropdown.Toggle>
-                                    <Dropdown.Menu> 
-                                        <Dropdown.Item onClick={this.disconnectHandler} href="#Disconnection">Disconnect</Dropdown.Item>
-                                    </Dropdown.Menu>
-                                </Dropdown>
-                            }
-                    </Form>
-*/
