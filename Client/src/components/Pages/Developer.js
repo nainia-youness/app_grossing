@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import TheHeader from '../Header/TheHeader'
 import {Container,Row, Col} from "react-bootstrap";
 import   {withRouter} from 'react-router-dom'
-import Rows from '../SideBar/Rows'
+import Rows from '../Other/Table/Rows'
 import Alert from 'react-bootstrap/Alert'
 import ClipLoader from "react-spinners/ClipLoader";
 //import DevInformation from '../Apps/DevInformation'
