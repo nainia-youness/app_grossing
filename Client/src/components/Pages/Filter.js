@@ -1,6 +1,6 @@
 import React,{Component} from "react";
 import {Container,FormControl, Row, Col,Button,Form } from "react-bootstrap";
-import Rows from '../SideBar/Rows'
+import Rows from '../Other/Table/Rows'
 import Search from '../SideBar/Search'
 import Published from '../SideBar/Published'
 //import Category from '../SideBar/Category'
@@ -185,7 +185,8 @@ class Filter extends Component  {
  
     }
 
-    submitHandler=(e)=>{
+    submitHandler=()=>{
+        console.log("submit handler")
         console.log(this.state.post)
         this.setState({
             loading:true
@@ -874,7 +875,7 @@ class Filter extends Component  {
                                         </Row>
                                         <Row >
                                             <Col>
-                                                <Rows showOrder={true} showDev={true} rows={this.state.rows}  render={this.submitHandler}
+                                                <Rows showOrderByHeader={true} showDev={true} rows={this.state.rows}  render={this.submitHandler} theHeaders={["Logo","Title","Category","Downloads","Review","Rating"]}
                                                 data={{order:this.state.post.orderBy,ChangeOrderChoice:this.changeOrderChoice.bind(this)}}></Rows>
                                             </Col>
                                         </Row>

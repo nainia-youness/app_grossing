@@ -133,7 +133,7 @@ class Rows extends Component {
                 }
             </thead>
             <tbody>
-                {//here it s better for the key to be the matricule of the app later 
+                {
                     rows.map((appObject,index)=>{
                     return <Row  key={index} packagename={appObject.packagename}  showDev={this.props.showDev} devName={appObject.developername} category={appObject.category} logo={appObject.imageurl} title={appObject.title} download={appObject.downloadtraced} reviews={appObject.ratingcount} rating={appObject.starrating}></Row>
                 })}

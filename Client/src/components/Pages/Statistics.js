@@ -177,7 +177,7 @@ class Statistics extends Component {
                             </Row>
                             <Row>
                                 <Col  md={{ span: 12}}>
-                                    <Rows  page={this.state.page} rows={this.state.rows} theHeaders={["Ranking","Logo","Title","Dowloads","Review","Rating"]}/>
+                                    <Rows  page={this.state.page} rows={this.state.rows} showOrderByHeader={false} theHeaders={["Ranking","Logo","Title","Downloads","Review","Rating"]}/>
                                 </Col>
                                 <Col  md={{offset: 5 }}>
                                     <ClipLoader textAlign='center'
