@@ -17,6 +17,8 @@ function Row(props) {
     const history = useHistory();
 
     function makeCapital(cat){
+        if(cat===null)
+            return
         const arr=cat.split('_')
         for(let i=0;i<arr.length;i++){
             arr[i]=arr[i].charAt(0).toUpperCase()+arr[i].slice(1).toLowerCase()
@@ -26,8 +28,6 @@ function Row(props) {
     }
 
     function titleHandler(){
-        if(category!=null)
-            category=makeCapital(category)
         if(window.history.state===undefined || window.history.state===null)
         {
             history.push('/apps/'+encodeURIComponent(packagename),{category: 'All Apps',subCategory:'Top New Free'})
@@ -38,13 +38,25 @@ function Row(props) {
                 history.push('/apps/'+encodeURIComponent(packagename),{category: 'All Apps',subCategory:'Top New Free'})
             }
             else{
-                history.push({
-                    pathname:  '/apps/'+encodeURIComponent(packagename),
-                    state: {
-                     category:window.history.state.state.category,
-                     subCategory:window.history.state.state.Top
-                    }
-                 })
+                if(category!=null){
+                    category=makeCapital(category)
+                    history.push({
+                       pathname:  '/apps/'+encodeURIComponent(packagename),
+                       state: {
+                        category:category,
+                        subCategory:"Top New Free"
+                       }
+                    })
+                }
+                else{
+                    history.push({
+                        pathname:  '/apps/'+encodeURIComponent(packagename),
+                        state: {
+                         category:window.history.state.state.category,
+                         subCategory:window.history.state.state.Top
+                        }
+                     })
+                }
             }
         }
     }

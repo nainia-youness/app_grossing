@@ -22,7 +22,7 @@ export class ChoosePages extends Component {
     }
 
     async componentDidMount(){
-
+        //changed code/////////////////////////////////// pass the functions
         if(window.history.state===undefined || window.history.state===null)
         {
             await this.props.history.push('/statistics',{ Top: 'Top New Free',page: '1',country: 'Morocco',category: 'All Apps' })
@@ -91,6 +91,7 @@ export class ChoosePages extends Component {
     }
 
     async ButHandler(page){
+        //changed code///////////////////////////////////
         await this.setState({
             page:page
         })

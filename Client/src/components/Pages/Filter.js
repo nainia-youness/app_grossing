@@ -186,8 +186,6 @@ class Filter extends Component  {
     }
 
     submitHandler=()=>{
-        console.log("submit handler")
-        console.log(this.state.post)
         this.setState({
             loading:true
         })
