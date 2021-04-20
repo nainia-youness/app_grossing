@@ -146,11 +146,31 @@ class Statistics extends Component {
             page:item
         })
     }
+    
     changeIsNextPage(item)
     {
         this.setState({
             isNextPage:item
         })
+    }
+
+
+    async nextPageButtonHandler(){
+        await this.props.history.push('/statistics',{ page:this.state.page,Top: this.state.Top,country:this.state.country,category:this.state.category })
+        await window.location.reload(false);
+    }
+
+    async choosePagesDidMount(){
+        if(window.history.state===undefined || window.history.state===null)
+        {
+            await this.props.history.push('/statistics',{ Top: 'Top New Free',page: '1',country: 'Morocco',category: 'All Apps' })
+        }
+        else{
+            if(window.history.state.state===undefined || window.history.state.state===null)
+            {
+                await this.props.history.push('/statistics',{ Top: 'Top New Free',page: '1',country: 'Morocco',category: 'All Apps' })
+            }
+        }
     }
 
     render() {
@@ -197,9 +217,11 @@ class Statistics extends Component {
                                 <ChoosePages 
                                     isCategoryChanged={this.state.isCategoryChanged}
                                     isNextPage={this.state.isNextPage}
-                                    Top={this.state.Top} country={this.state.country} category={this.state.category}
                                     numberApps={numberApps}  data={
-                                        {page:this.state.page,ChangePage:this.changePage.bind(this)}}>
+                                        {page:this.state.page,ChangePage:this.changePage.bind(this)}}
+                                    nextPageButtonHandler={()=>this.nextPageButtonHandler()} 
+                                    choosePagesDidMount={()=>this.choosePagesDidMount()} 
+                                >
                                 </ChoosePages>
                                 </Col>
                             </Row>

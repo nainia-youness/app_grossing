@@ -22,22 +22,14 @@ export class ChoosePages extends Component {
     }
 
     async componentDidMount(){
-        //changed code/////////////////////////////////// pass the functions
-        if(window.history.state===undefined || window.history.state===null)
-        {
-            await this.props.history.push('/statistics',{ Top: 'Top New Free',page: '1',country: 'Morocco',category: 'All Apps' })
-        }
-        else{
-            if(window.history.state.state===undefined || window.history.state.state===null)
-            {
-                await this.props.history.push('/statistics',{ Top: 'Top New Free',page: '1',country: 'Morocco',category: 'All Apps' })
-            }
-            else{
+        if(window.history.state!==undefined && window.history.state!==null){
+            if(window.history.state.state!==undefined && window.history.state.state!==null){
                 this.setState({
                     page:window.history.state.state.page
-                })
+                });
             }
         }
+
     }
 
     componentDidUpdate(PrevState,PrevProps){
@@ -91,13 +83,12 @@ export class ChoosePages extends Component {
     }
 
     async ButHandler(page){
-        //changed code///////////////////////////////////
         await this.setState({
             page:page
         })
+        await this.props.nextPageButtonHandler();
         await this.props.data.ChangePage(this.state.page)
-        await this.props.history.push('/statistics',{ page:this.state.page,Top: this.props.Top,country:this.props.country,category:this.props.category })
-        await window.location.reload(false);
+        await this.props.nextPageButtonHandler();
     }
 
 

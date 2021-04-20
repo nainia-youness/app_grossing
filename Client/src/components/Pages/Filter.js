@@ -12,7 +12,7 @@ import Downloads from '../SideBar/Downloads'
 import TopChart from '../SideBar/TopChart'
 import  '../../index.css'
 import TheHeader from '../Header/TheHeader'
-import ChoosePages from '../SideBar/ChoosePages'
+import ChoosePages from '../Other/ChoosePages'
 import axios from 'axios'
 import Auth from '../Auth/Auth'
 import {reactLocalStorage} from 'reactjs-localstorage';
@@ -622,8 +622,21 @@ class Filter extends Component  {
         })
     }
 
+    async nextPageButtonHandler(){
+        await this.props.history.push('/filter',{page:this.state.post.page,showP: this.state.post.showP,showCat:this.state.post.showCat,showTc:this.state.post.showTc,showD:this.state.post.showD,showRat:this.state.post.showRat,showAd:this.state.post.showAd,showPr:this.state.post.showPr,showRd:this.state.post.showRd})
+        await window.location.reload(false);
+    }
+
+    async choosePagesDidMount(){
+        if(window.history.state.state===undefined || window.history.state.state===null)
+        {
+            this.props.history.push('/filter',{page:'1',showP: false,showCat:false,showTc:false,showD:false,showRat:false,showAd:false,showPr:false,showRd:false})
+        }
+    }
+
   render(){
     const { showTopChart,showSearch,showPublished,showReleaseDate,showPrice,showAdd,showRating,showDownload} = this.state.post;
+    console.log(this.state.page)
     return (
       <>
 
@@ -885,17 +898,12 @@ class Filter extends Component  {
                                         <Row>
                                             <Col>
                                                 <ChoosePages 
-                                                    showP= {this.state.post.showPublished}
-                                                    showCat={this.state.post.showCategory}
-                                                    showTc={this.state.post.showTopChart}
-                                                    showD={this.state.post.showDownload}
-                                                    showRat={this.state.post.showRating}
-                                                    showAd={this.state.post.showAdd}
-                                                    showPr={this.state.post.showPrice}
-                                                    showRd={this.state.post.showReleaseDate}
                                                     isNextPage={this.state.isNextPage}
                                                     numberApps={this.state.numberApps}  data={
-                                                        {page:this.state.post.page,ChangePage:this.changePage.bind(this)}}></ChoosePages>
+                                                        {page:this.state.post.page,ChangePage:this.changePage.bind(this)}}
+                                                    nextPageButtonHandler={()=>this.nextPageButtonHandler()} 
+                                                    choosePagesDidMount={()=>this.choosePagesDidMount()}     
+                                                        ></ChoosePages>
                                             </Col>
                                         </Row>
                                     </Container>
